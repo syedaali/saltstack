@@ -7,10 +7,6 @@
 
 import salt.exceptions
 
-
-# create data-structure to return with default value
-ret = {'name': '', 'changes': {}, 'result': False, 'comment': ''}
-
 def profile(name):
     '''
     This state module allows you to modify system tuned parameters
@@ -28,6 +24,9 @@ def profile(name):
     To see a valid list of states call execution module:
         :py:func:`tuned.list <salt.modules.tuned.list_>`
     '''
+
+    # create data-structure to return with default value
+    ret = {'name': '', 'changes': {}, 'result': False, 'comment': ''}
 
     ret[name] = name
     profile = name
@@ -93,8 +92,8 @@ def off(name=None):
         :py:func:`tuned.list <salt.modules.tuned.list_>`
     '''
 
-    ret['name'] = 'off'
-    ret['comment'] = 'off'
+    # create data-structure to return with default value
+    ret = {'name': 'off', 'changes': {}, 'result': False, 'comment': 'off'}
 
     # check the current state of tuned
     current_state = __salt__['tuned.active']()
