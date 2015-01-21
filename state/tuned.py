@@ -1,3 +1,10 @@
+'''
+:maintainer:    Syed Ali <alicsyed@gmail.com>
+:maturity:      new
+:depends:       cmd.run
+:platform:      Linux
+'''
+
 import salt.exceptions
 
 
